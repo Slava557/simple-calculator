@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <title>Калькулятор</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор</title>
   <style>
-    /* Добавьте стили CSS для улучшения внешнего вида */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
   </style>
 </head>
 <body>
   <h1>Калькулятор</h1>
-  <meta charset="UTF-8">
   <input type="text" id="expression" placeholder="Введите выражение">
-  <button onclick="calculate()">=</button>
+  <button id="calculateBtn">=</button>
   <p id="result"></p>
 
   <script>
@@ -26,6 +48,8 @@
         document.getElementById("result").textContent = "Ошибка: Неверное выражение";
       }
     }
-  </script>I
+
+    document.getElementById("calculateBtn").addEventListener("click", calculate);
+  </script>
 </body>
 </html>
